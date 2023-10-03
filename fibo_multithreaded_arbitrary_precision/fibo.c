@@ -58,6 +58,8 @@ void *fibo(void *limit)
   mpz_clear(a);
   mpz_clear(b);
   mpz_clear(c);
+
+  return 0;
 }
 
 int main(int argc, char *argv[])
