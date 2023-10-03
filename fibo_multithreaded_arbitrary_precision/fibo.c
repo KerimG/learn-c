@@ -2,7 +2,13 @@
 // Public Domain
 // https://creativecommons.org/publicdomain/zero/1.0/
 
-// Compile with: gcc fibo.c -o fibo.bin -lgmp -pthread
+// On Linux(Ubuntu), compile with: gcc fibo.c -o fibo.bin -lgmp -pthread
+// install gmp with: sudo apt install libgmp-dev
+
+// On macOS: gcc fibo.c -o fibo.bin -L/opt/homebrew/lib -I/opt/homebrew/include -lgmp -pthread
+// install gmp with: brew install gmp
+
+// On Windows: good luck
 
 #include <stdio.h> // printf
 #include <stdlib.h> // strtol (string to long)
@@ -44,8 +50,8 @@ void *fibo(void *limit)
   // print the results to stdout
   // it's going to be a mess, though
   printf("Fibonacci Number %ld: ",  *(long *)limit);
-  mpz_out_str(stdout, 10, b);
-  printf("\n");
+  // mpz_out_str(stdout, 10, b);
+  // printf("\n");
   printf("%f ms.\n", elapsedTime);
 
   // cleanup
